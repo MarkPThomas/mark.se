@@ -2,38 +2,42 @@ import type { StorybookConfig } from "@storybook/react-webpack5";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  staticDirs: ["../public"],
   addons: [
     "@storybook/preset-create-react-app",
     "@storybook/addon-onboarding",
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
-    "@storybook/addon-interactions",
-    '@storybook/addon-designs',
+    "@storybook/addon-interactions",  // Run 'play' for components
+    '@storybook/addon-a11y',      // WCAG checks
+    '@storybook/addon-designs',   // Figma
     {
       name: '@storybook/addon-styling-webpack',
       options: {
         // plugins: [
         //   new MiniCssExtractPlugin(),
         // ]
-        rules: [
-          // Replaces existing CSS rules to support CSS Modules
-          {
-            test: /\.css$/,
-            use: [
-              'style-loader',
-              {
-                loader: 'css-loader',
-                options: {
-                  modules: {
-                    auto: true,
-                    localIdentName: '[name]__[local]--[hash:base64:5]',
-                  },
-                },
-              }
-            ],
-          }
-        ]
+        // // CSS Modules
+        //  // currently crashing Storybook - looks like due to demo components?
+        // rules: [
+        //   // Replaces existing CSS rules to support CSS Modules
+        //   {
+        //     test: /\.css$/,
+        //     use: [
+        //       'style-loader',
+        //       {
+        //         loader: 'css-loader',
+        //         options: {
+        //           modules: {
+        //             auto: true,
+        //             localIdentName: '[name]__[local]--[hash:base64:5]',
+        //           },
+        //         },
+        //       }
+        //     ],
+        //   }
+        // ]
       },
     },
   ],
@@ -41,6 +45,8 @@ const config: StorybookConfig = {
     name: "@storybook/react-webpack5",
     options: {},
   },
-  staticDirs: ["../public"],
+  docs: {
+    autodocs: 'tag',
+  },
 };
 export default config;
