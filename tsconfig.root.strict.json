@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig.root.json",
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": false,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    // TODO: Consider removing the following. Test first! These are copied defaults.
+    "allowSyntheticDefaultImports": true,
+    "lib": [
+      "DOM",
+      "ScriptHost",
+      "ES5",
+      "ES6",
+      "ES7",
+      "ES2017",
+      "ES2017.Object",
+      "ES2021",
+      "ESNext",
+      "ESNext.AsyncIterable"
+    ],
+  }
+}

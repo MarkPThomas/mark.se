@@ -1,0 +1,29 @@
+{
+  "globals": {
+    "ts-jest": {
+      "tsconfig": "./tsconfig.json"
+    }
+  },
+  "transform": {
+    "^.+\\tsx?$": "ts-jest"
+  },
+  "testRegex": "\\.a(test|specs)\\.ts$",
+  "testEnvironment": "node",
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js",
+    "jsx",
+    "json",
+    "node"
+  ],
+  "moduleNameMapper": {
+    "\\.(css|jpg|png)$": "<rootDir>/emptyModule.ts",
+    "^common/(.*)$": "<rootDir>/../common/$1"
+  },
+  "clearMocks": true,
+  "coverageDirectory": "testResults/coverage",
+  "coveragePathIgnorePatterns": [
+    "/node_modules/"
+  ]
+}

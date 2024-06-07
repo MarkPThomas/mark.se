@@ -1,0 +1,29 @@
+{
+  "extends": "../../../../tsconfig.root.json",
+  "compilerOptions": {
+    "strict": false,
+    // "noImplicitAny": false,
+    // "strictFunctionTypes": false,
+    // "noImplicitThis": false,
+    // "alwaysStrict": false,
+    "rootDir": "src",
+    "outDir": "dist",
+    "typeRoots": [
+      "./typings/",
+      "./node_modules/@types"
+    ]
+  },
+  "include": [
+    "./src/**/*.ts",
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "scripts",
+    "bin",
+    "webpack",
+    "jest",
+    "coverage",
+    "**/*.*spec.ts"
+  ]
+}

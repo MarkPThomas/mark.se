@@ -1,25 +1,33 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Logs
+logs
+log/
+*.log
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# Dependency directory
+node_modules
 
-# testing
-/coverage
+# Jest Coverage report directory
+coverage
+*.xml
 
-# production
-/build
+#IDEs and editors
 
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+## VSCode ##
+.vscode
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+### OSX ###
+*.DS_Store
 
-*storybook.log
+packages/**/.env
+packages/**/.env.production
+packages/**/.env.development
+packages/**/.env.test
+
+.eslintcache
+
+# Build files
+dist
+build
+
+# HTML API Documentation
+docs

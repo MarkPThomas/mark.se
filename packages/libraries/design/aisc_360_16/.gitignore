@@ -1,0 +1,29 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+__snapshots__
+__archive__
+/testResults
+sonar-report.xml
+
+# production
+/dist
+*.tsbuildinfo
+
+### OSX ###
+*.DS_Store
+
+# AWS
+*.cer
+*.pem
+
+# yarn
+yarn-debug.log*
+yarn-error.log*
+
+# configs/secrets
+*.env
